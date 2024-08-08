@@ -2,6 +2,7 @@ import { Client, GatewayIntentBits, SlashCommandBuilder, Routes } from 'discord.
 import { REST } from '@discordjs/rest';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
+import http from 'http';
 
 dotenv.config(); // Load environment variables from .env file
 
