@@ -34,6 +34,17 @@ const rest = new REST({ version: '10' }).setToken(TOKEN);
     }
 })();
 
+// Dummy HTTP server to keep Render happy
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Bot is running\n');
+});
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
+});
+
 // Function to fetch data from the API
 async function fetchData() {
     try {
